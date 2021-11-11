@@ -1,0 +1,406 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
+
+/* Variables */
+:root {
+  --font-family: "Roboto", sans-serf;
+  --normal-font: 400;
+  --bold-font: 700;
+  --bolder-font: 900;
+  --bg-color: #fcfcfc;
+  --primary-color: #4756df;
+  --secondary-color: #ff7235;
+  --primary-shadow: #8b8eaf;
+  --secondary-shadow: #a17a69;
+  --bottom-margin: 0.5rem;
+  --bottom-margin-2: 1rem;
+  --line-height: 1.7rem;
+  --transition: 0.3s;
+}
+/* Variables end */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* CSS Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 2px solid red; */
+}
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+body {
+  font-family: var(--font-family);
+}
+nav{
+  position: sticky; /* hace que sea sticky siempre en la posicion puesta */
+  top: 0; /* arriba de todo */
+  left: 0; /* a la izq de todo */
+  z-index: 1; /* encima de todo */
+  display: flex; /* flex */
+  align-items: center; /* alineamos verticalmente al medio */
+  justify-content: space-between; /* alineamos horizontalmente dejando un espacio en el medio */
+  padding: 1.5rem 3.5rem; /* ancho y alto de la nax */
+  background-color: var(--bg-color); /* borde blanco */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* le damos una sombra */
+}
+
+nav h1{
+  color: var(--primary-color); /* le cambiamos el color al Logo(?) en realidad es un h1 con un nombre */
+}
+nav a{
+  color: var(--primary-color);/* le cambiamos el color a los links */
+  transition: var(--transition); 
+}
+
+nav a:hover{
+  color: var(--secondary-color);/* al tener la transicion y pasar el mouse */
+  border-bottom: 2px solid var(--secondary-color); /* 1ero se subraya y despues cambia el color */
+}
+
+nav ul{
+  display: flex; /* ponemos en horizontal los links */
+  gap: 1.9rem; /* le damos separacion */
+}
+
+nav ul li{
+  font-weight: var(--bold-font); /* le ponemos negrita */
+}
+
+.burger-menu{
+  color: var(--primary-color); /* le cambiamos el color al icono */
+  font-size: 2rem; /* lo hacemos mas grande */
+  border: 0; /* le sacamos el borde feo */
+  background-color: transparent; /* le sacamos el gris del fondo al hacerlo transparente */
+  cursor: pointer; /* le ponemos el cursor de la manito imitando el cursor del link */
+  display: none; /* no se muestra en pantallas grandes */
+}
+
+
+/* HERO SECTION */
+
+.hero{
+  display: flex; /* mostramos como flex */
+  align-items: center; /* centramos los items  */
+  justify-content: center;
+  
+  gap: 2.5rem; /* le damos una separacion entre la imagen y el texto */
+  max-width: 68.75rem; /* como maximo la imagen sera 1100px  */
+  margin: auto; /* centramos todo el contenido del hero al medio */
+}
+
+.hero-img{
+  height: 37.5rem;  /* 600px de alto */
+  width: 37.5rem; /* 600px de ancho */
+}
+
+.bio{
+  width: 25rem; /* cuadrado de 400px */
+  padding: 0.625rem; /* le damos un padding para todos lados de 10px  */
+  border-radius: 6px; /* un borde de 6px redondeado */
+  box-shadow: 0px 2px 15px 2px var(--primary-shadow); /* le damos una sombra a la caja */
+}
+
+.bio h2{
+  margin-bottom: var(--bottom-margin); /* separamos el About Me del texto del parrafo  */
+}
+
+.bio p{
+  line-height: var(--line-height); /* separamos los renglones */
+  padding: 0.3rem 0; /* le damos un poco de espacio entre el contenido y el borde arriba y abajo */
+}
+
+
+/* MORE ABOUT ME */
+
+
+.more-about{
+  background-color: var(--bg-color); /* le doy color blanco de fondo */
+  padding: 1rem 6rem; /* 16px para arriba y abajo  96px para los costados */
+}
+
+.more-about h2{
+  margin-bottom: var(--bottom-margin);/* poquito de espacio entre el h2 y el parrafo */
+  text-align: center; /* ponemos el texto en el medio */
+}
+
+.more-about p{
+  line-height: var(--line-height); /* separacion entre los renglones */
+  padding: 0.4rem; /* poquito de espacio en el parrafo */
+}
+
+
+
+/* SKILLLLLLSSSSS */
+
+.skills{
+  max-width: 68.75rem; /* el contenedor no puede ser mayor a 1100px */
+  margin: auto; /* le damos margen automatico para ayudar a alinear al centro */
+  text-align: center; /* texto al medio o sea todo centrado */
+  margin-top: 2.5rem; /* despegamos el contenedor  del parrafo de arriba*/
+}
+
+.skill-header{
+  margin-bottom: 1rem; /* le damos separacion al titulo de las fotos */
+}
+
+.skills-wrapper img{
+  padding: 1.25rem; /* le damos separacion a cada imagen de 20px para todos los costados */
+}
+
+.icon{
+  width: 11.875rem; /* ancho 190px */
+  height: 11.25rem; /* alto 180px */
+}
+
+.icon-card {
+  background-color: #fff; /* color blanco */
+  border-radius: 11px; /* borde redondeado */
+  box-shadow: 0 3px 10px var(--secondary-shadow); /* sombra */
+  padding: 20px; /* espacio entre el contenido y su borde de 20px para cada lado */
+  margin: 10px; /* espacio entre cada tarjeta , similar al gap */
+}
+
+
+/* PROYECTOS */
+
+.projects {
+  background-color: var(--bg-color);
+  padding: 32px 0px; /* padding 32px arriba y abajo en el contenedor */
+  margin-top: 2rem; /* 32px de espacio para arriba */
+  
+}
+
+.project-pic{
+  width: 65%; /* achicamos el ancho de la foto */
+  height: 60%; /* achicamos el alto de la foto */
+}
+
+.projects-container {
+  display: flex; /* hacemos el contenedor flex  */
+  align-items: center; /*  alineamos horizontalmente */
+  justify-content: center;
+}
+
+.projects-title{
+  text-align: center; /* ponemos el texto centrado */
+  margin-bottom: 1rem; /* separamos el titulo del contenedor */
+}
+.project-container{
+  text-align: center; /* centramos el texto del parrafo y del link */
+  width: 21.875rem; /* le damos un ancho de 350px al contenedor */
+  padding: 1rem; /* le damos un poco de relleno a los costados */
+}
+.project-container p{
+  padding: 0.4rem; /* poco de padding al parrafo */
+}
+.project-title{
+  margin-bottom: var(--bottom-margin); /* le damos separacion entre el titulo y el parrafo  */
+}
+.project-details{
+  margin-bottom:  var(--bottom-margin); /* le damos separacion al parrafo */
+}
+.project-card{
+  background-color: #fff ;/* color de fondo blanco */
+  border-radius: 11px; /* redondeamos los bordes */
+  box-shadow: 0 3px 10px var(--primary-shadow); /* sombra al contenedor */
+  padding: 20px;
+  margin: 10px; /* margen para todos lados */
+}
+
+/* CONTACT */
+
+.contact{
+  margin-top: 2rem; /* separamos el contenedor de la parte de arriba */
+}
+.contact h2{
+  text-align: center; /* ponemos el titulo en el medio */
+  margin-bottom: var(--bottom-margin-2); /* separacion para abajo */
+}
+.contact-form-container{
+  max-width: 40.75rem; /* maximo de ancho 652px del contenedor del form */
+  margin: 0 auto; /* con esto lo centramos */
+  padding: 15px;
+  border-radius: 5px; /* borde redondeado */
+  box-shadow: 0 3px 10px var(--secondary-shadow); /* sombra */
+}
+
+.contact-form-container label{
+  line-height: 2rem; /* separamos los renglones 32px */
+  font-weight: var(--bold-font) ; /* hacemos la fuente negrita */
+  color: var(--primary-color); /* violetita */
+}
+.contact-form-container textarea{
+  min-height: 6.25rem; /* minimo de alto 100px */
+  font-size: 14px;
+}
+.contact-form-container .input-field{
+  width: 100%; /* tod@ ocupa el 100% del contenedor */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px; /* redondeamos los inputs */
+  border: none;
+  border: 2px outset var(--primary-color);
+  font-size: 0.875rem;
+  outline: none;
+}
+.input-field::placeholder {
+  padding: 0.5rem; /* le damos relleno al pace holder */
+  color: var(--primary-color); /* color violeta */
+}
+
+.submit-btn {
+  width: 100%; /* ocupa todo el ancho del contenedor */
+  padding: 10px; /* relleno 10px para todos lados */
+  margin: 10px 0; /* margen arriba y abajo */
+  background-color: #fff; /* color blanco de fondo */
+  border: 2px solid var(--primary-color); /* borde 2px solido violeta */
+  border-radius: 5px; /* bordes redondeados */
+  font-size: 1rem; /* 16 pixeles tamaño fuente */
+  font-weight: var(--bold-font); /* negrita */
+  transition: var(--transition); /*  */
+}
+.submit-btn:hover {
+  background-color: var(--primary-color); /* le pasas el mouse por arriba el color de fondo violeta */
+  border: 2px solid var(--primary-color);
+  cursor: pointer; /* cursor manito */
+  color: #fff; /* color del texto blanco */
+}
+/* SOCIALS */
+
+.socials {
+  display: flex; 
+  flex-direction: column;
+  position: fixed; /* están fuera del flujo normal de la página. toma como referencia la ventana del navegador seguirá en la misma posición respecto a la ventana del navegador aunque el scroll haya desplazado la página hacia abajo. */
+  right: 1%;  /* un poquito antes del fondo de la derecha */
+  bottom: 50%;  /* en el medio */
+}
+
+.socicon {
+  width: 2rem; /* ancho 32px  */
+  height: 2rem; /* alto 32px */
+}
+
+
+/* FOOTER */
+footer{
+  background-color: var(--bg-color); /* color de fondo blanco */
+  padding: 1.25rem; /* relleno 20px para cada lado*/
+  text-align: center; /* centramos el texto */
+  margin: 2rem 0 0; /* margin-top 32px */
+}
+
+/* scroll to top */
+.scroll-up{
+  position: fixed; /* fuera del flujo normal, toma como referencia la pantalla del navegador */
+  right: 0.5%; /* casi todo a la derecha */
+  bottom: 3%; /* casi abajo de todo  */
+  cursor: pointer; /* cursor manito */
+}
+
+.up-arrow{
+  width: 3rem;  /* 48px de ancho */
+  height: 3rem; /* 48px de alto */
+}
+
+
+@media screen and (max-width: 720px) {
+  /*changes reflects on screen with a width of 720px and below*/
+  nav {
+    padding: 1.5rem 1rem; /* pt pb 24px pl pr 12px */
+  }
+  nav ul{
+    position: fixed; 
+    background-color: var(--bg-color); /* fondo blanco */
+    flex-direction: column; /* flex como columna */
+    top: 5.375rem; /* 86px de top */
+    left: 10%; /* lo ponemos un poquito a la izq */
+    width: 80%; /* que ocupe un poco mas de la pantalla */
+    text-align: center; /* centramos el texto */
+    transform: translateX(120%); /* con esto lo sacamos del viewport (lo corremos a la derecha) no se ve pero esta */
+    transition: transform 0.5s ease-in;
+  }
+  nav ul li{
+    margin: 8px; /* cada lista de la ul va a tener un margen de 8px para cada lado */
+  }
+  .burger-menu{
+    display: block; /* mostramos la hamburguesa */
+  }
+  nav ul.show{
+    transform: translateX(0);
+  }
+
+  .hero{
+    margin-top: -4rem; /* levantamos la imagen , mas cerca a la barra */
+    flex-direction: column; /* alineamos como una columna la imagen y el about-me */
+    gap: 0; /* queda pegado la imagen y el texto */
+  }
+
+  .hero img{
+    height: 37.5rem; /* alto 600px */
+    width: 30rem; /* ancho 400px  , se achico un poco el ancho*/ 
+  }
+  .bio{
+    margin-top: -7rem; /* lo acercamos arriba -112px , sobrepasa la imagen */ 
+    width: 20.5rem; /* achicamos el ancho del texto */
+  }
+  .more-about{
+    margin-top: 2rem; /* lo separamos del bio */
+    padding: 1rem 3.5rem; /* le damos mas espacio a los costados */
+  }
+
+  .more-about p{
+    text-align: justify; /* estira las lineas para que tengan el mismo ancho */
+  }
+
+  .icon {
+    width: 5.875rem; /* 94 px de ancho */
+    height: 5.25rem; /* 94 px de alto */
+  }
+
+  .projects-container{
+    flex-direction: column; /* ponemos los proyectos uno abajo del otro */
+  }
+
+  .project-container{ /* contenedor de cada tarjeta */
+    width: 20.875rem; /* ancho 334 px */
+  }
+
+  .contact-form-container{
+    max-width: 23.75rem; /* maximo ancho 375px */
+  }
+
+}
+
+@media screen and (max-width: 420px) {
+  .hero img {
+    height: 37.5rem; /* achicamos el tamaño de la imagen */
+    width: 23rem;
+  }
+
+  .bio {
+    width: 18.3rem; /* achicamos el contenedor que tiene el texto about Me */
+  }
+
+  .project-container {
+    width: 17.875rem; /* achicamos las el contenedor de las tarjetas de los proyectos */
+  }
+
+  .contact-form-container {
+    max-width: 17.75rem; /* no dejamos que crezca mucho el form */
+  }
+} 
+
